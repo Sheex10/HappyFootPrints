@@ -1,0 +1,295 @@
+  .img_logo{
+    text-align: left;
+    width: 90px;
+    height: 140px;
+}
+
+/*  */
+
+/* Tamaño de imagen */
+
+#fotoperro{
+    max-width: 50%;
+  height: auto;
+  margin: 20px;
+  padding: 5px;
+  display: inline-block;
+  margin: auto;
+  }
+#fotoperro2{
+  max-width: 75%;
+height: auto;
+margin: 20px;
+padding: 5px;
+display: inline-block;
+margin: auto;
+}
+
+#fotoperro3{
+    max-width: 70%;
+  height: auto;
+  margin: 20px;
+  padding: 5px;
+  display: inline-block;
+  margin: auto;
+  }
+  #fotoperro4{
+    max-width: 60%;
+  height: auto;
+  margin: 20px;
+  padding: 5px;
+  display: inline-block;
+  margin: auto;
+  }
+  #fotoperro5{
+    max-width: 40%;
+  height: auto;
+  margin: 20px;
+  padding: 5px;
+  display: inline-block;
+  margin: auto;
+  }
+/* Fin */
+
+/*color de letra */
+#fuente1{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: rgb(10, 8, 8);
+}
+
+/* CSS DE LA CATA*/
+/*Imagenes para mostrar juntas*/
+.imgPrincipal{
+  width: 350px;
+  height: 300px;
+  margin: 20px;
+}
+/*Fin*/
+
+/*Imagen para producto con Descripción*/
+img{
+  width: 450px;
+  height: 400px;
+  margin: 20px;
+}
+/*Fin*/
+
+/*Fuente*/
+.fuente{
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  
+}
+/*Fin*/
+
+/*Para descripción*/
+.desc{
+  font-family: 'Oswald', sans-serif;
+  text-shadow: 2px 2px rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+
+
+}
+/*Fin*/
+
+
+.tituloss{
+  font-family: 'Oswald', sans-serif;
+  text-align:center;
+  margin: 50px  ;
+  text-shadow: 2px 2px rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+.tituloss2{
+  font-family: 'Oswald', sans-serif;
+  text-align:center;
+  color: rgb(255, 255, 255);
+}
+/*Botón de añadir a carrito*/
+.button {
+  display: inline-block;
+  padding: 25px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: rgb(0,0,0);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: rgb(151, 148, 148)}
+
+.button:active {
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+/*Fin*/
+
+.descripcion{
+  font-family: 'oswald', sans-serif;
+}
+
+
+.transparent_box{
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+/* CSS PARA LA NAV BAR */
+.header{
+    background-color: #50bb67;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+}
+
+.header .logo{
+    cursor: pointer;
+}
+
+.header .logo img{
+    height: 100px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .nav-links{
+    list-style: none;
+}
+
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;    
+}
+
+.header .nav-links li:hover{
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+    font-size: 700;
+    color: #eceff1;
+    text-decoration: none;    
+}
+
+.header .nav-links li a:hover{
+    color: #ffbc0e;
+}
+
+.header .btn button{
+    font-weight: 700;
+    color: #1b3039;
+    padding: 9px 25px;
+    background: #eceff1;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.header .btn button:hover{
+    background-color: #e2f1f8;
+    color: #ffbc0e;
+    transform: scale(1.1);
+}
+
+/*cantidad de productos*/
+.cant{
+  background-color: rgb(255, 255, 255);
+  color: rgb(81, 80, 80);
+  margin: 20px;
+}
+
+
+.diseñopag1{
+  display: flex;
+}
+
+/*para la tabla del admin*/
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/*Estilos distintos para el admin*/
+#idk{
+  width: 150px;
+  height: 150px;
+}
+
+.bonn {
+  border-radius: 20%;
+  color: white;
+  padding: 16px 30px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#mas{
+  border-radius: 6px;
+  color: rgb(0, 0, 0);
+  padding: 16px 30px;
+  font-size: 30px;
+  cursor: pointer;
+  width: 150px;
+}
+
+#edit{
+  border-radius: 6px;
+  width: 150px;
+  height: 55px;
+  margin: 10px;
+  background-color: #51d16d;
+  border-style: hidden;
+}
+
+.formu{
+  margin: none;
+}
+
+/* XDD */
+.btnRaza{
+  color: #0099CC;
+  background: #1aca64;
+  border-radius: 6px; 
+  border: none;
+	color: white;
+	padding:16px 32px;
+	text-align: center;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.4s; 
+	transition-duration: 0.4s;
+	cursor: pointer;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.btnRaza1{
+	background-color: white;
+	color: black;
+	border: 2px solid #14cc8f;
+}
+
+.btnRaza:hover {
+      background-color: #1ace98;
+      color: white;
+ }
