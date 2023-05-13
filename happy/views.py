@@ -19,3 +19,9 @@ def Alfombra(request):
 def BañoEco(request):
     return render(request,'happy/BañoEco.html')
 
+def rascador(request):
+    return render(request, 'happy/rascador.html')
+
+def collar(request):
+    return render(request,'happy/collar.html')
+
