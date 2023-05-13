@@ -7,3 +7,6 @@ def Pag1(request):
 def Perros(request):
     return render(request,'happy/Perros.html')
 
+def Gatos(request):
+    return render(request,'happy/Gatos.html')
+
