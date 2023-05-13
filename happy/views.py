@@ -10,3 +10,12 @@ def Perros(request):
 def Gatos(request):
     return render(request,'happy/Gatos.html')
 
+def Razas(request):
+    return render(request,'happy/Razas.html')
+
+def Alfombra(request):
+    return render(request,'happy/Alfombra.html')
+
+def BañoEco(request):
+    return render(request,'happy/BañoEco.html')
+
