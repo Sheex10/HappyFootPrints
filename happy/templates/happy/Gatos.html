@@ -18,13 +18,13 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="{% url 'Pag1' %}">Home</a></li>
+                <li><a href="Pag1.html">Home</a></li>
                 <li><a href="{% url 'Perros' %}">Perros</a></li>
                 <li><a href="{% url 'Gatos' %}">Gatos</a></li>
                 <li><a href="Razas.html">Clickea!</a></li>
             </ul>
         </nav>
-        <a class="btn" href="{% 'Carrito' %}"><button>Carrito</button></a>
+        <a class="btn" href="Carrito.html"><button>Carrito</button></a>
         <a class="btn" href="InicioSesion.html"><button>Perfil</button></a>
     </header>
     <div class="container"> <!-- BACKGROUND RESPONSIVE-->
@@ -50,14 +50,14 @@
 
                 <div class="col-md-4 col-sm-12">
                     <a href="rascador.html" target="_self"><img id="fotoperro4" 
-                    src="img/image-removebg-preview.png" alt="No disponible"></a>
+                    src="{% static 'happy/img/image-removebg-preview.png' %}" alt="No disponible"></a>
                     <h4 class="desc2">Rascador de 3 niveles</h4>
                     <h5 class="desc2">$47.590</h5>
                 </div>
 
                 <div class="col-md-4 col-sm-12">
                     <a href="collar.html" target="_self"><img id="fotoperro4" 
-                    src="img/collar_ella_1-removebg-preview.png" alt="No disponible"></a>
+                    src="{% static 'happy/img/collar_ella_1-removebg-preview.png' %}" alt="No disponible"></a>
                     <h4 class="desc2">Collar naranjo</h4>
                     <h5 class="desc2">$5.990</h5>            
                 </div>
