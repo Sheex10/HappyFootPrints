@@ -79,3 +79,6 @@ def Clave2 (request):
 
 def Admin (request):
     return render(request,'happy/Admin.html')
+
+def Agregar(request):
+    return render(request,'happy/Agregar.html')
