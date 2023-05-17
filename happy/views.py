@@ -51,3 +51,6 @@ def Arenero(request):
 def Razas(request):
     return render(request,'happy/Razas.html')
 
+def Carrito(request):
+    return render(request,'happy/Carrito.html')
+
