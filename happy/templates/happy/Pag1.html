@@ -22,10 +22,10 @@
                 <li><a href="Pag1.html">Home</a></li>
                 <li><a href="{% url 'Perros' %}">Perros</a></li>
                 <li><a href="{% url 'Gatos' %}">Gatos</a></li>
-                <li><a href="Razas.html">Clickea!</a></li>
+                <li><a href="{% url 'Razas' %}">Clickea!</a></li>
             </ul>
         </nav>
-        <a class="btn" href="Carrito.html"><button>Carrito</button></a>
+        <a class="btn" href="{% url 'Carrito' %}"><button>Carrito</button></a>
         <a class="btn" href="InicioSesion.html"><button>Perfil</button></a>        
     </header>
     <div class="container"> 
