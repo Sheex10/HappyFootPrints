@@ -25,7 +25,6 @@ def Juguete(request):
 def Plato(request):
     return render(request,'happy/Plato.html')
 
-
 def Gatos(request):
     return render(request,'happy/Gatos.html')
 
@@ -54,3 +53,29 @@ def Razas(request):
 def Carrito(request):
     return render(request,'happy/Carrito.html')
 
+def InicioSesion (request):
+    return render(request,'happy/InicioSesion.html')
+
+def IniAdmin (request):
+    return render(request,'happy/IniAdmin.html')
+
+def register (request):
+    return render(request,'happy/register.html')
+
+def Editar (request):
+    return render(request,'happy/Editar.html')
+
+def Editar2 (request):
+    return render(request,'happy/Editar2.html')
+
+def EditPerfil (request):
+    return render(request,'happy/EditPerfil.html')
+
+def Clave (request):
+    return render(request,'happy/Clave.html')
+
+def Clave2 (request):
+    return render(request,'happy/Clave2.html')
+
+def Admin (request):
+    return render(request,'happy/Admin.html')

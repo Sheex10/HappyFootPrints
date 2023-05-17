@@ -1,9 +1,19 @@
 from django.contrib import admin
 from django.urls import path
-from .views import Pag1,Perros,BañoEco,Cama,Casa,Correa,Juguete,Plato,Gatos,Alfombra,rascador,collar,CamaGatos,JugueteGato,Arenero,Carrito,Razas
+from .views import Pag1,Perros,BañoEco,Cama,Casa,Correa,Juguete,Plato,Gatos,Alfombra,rascador,collar,CamaGatos,JugueteGato,Arenero,Carrito,Razas,InicioSesion,IniAdmin,register,Editar,Editar2,EditPerfil,Clave,Clave2,Admin
 
 urlpatterns = [
     path('',Pag1,name="inicio"),
+    path('InicioSesion',InicioSesion, name="IniSesion"),
+    path('InicioAdmin',IniAdmin,name="IniAdmin"),
+    path('registro',register,name="register"),
+    path('Editar',Editar,name="Editar"),
+    path('Editar2',Editar2,name="Editar2"),
+    path('EditPerfil',EditPerfil,name="EditPerfil"),
+    path('Clave',Clave,name="Clave"),
+    path('Clave2',Clave2,name="Clave2"),
+    path('Admin',Admin,name="Admin"),
+
 
     path('perros',Perros,name="Perros"),
     path('bañoeco',BañoEco, name="BañoEco"),

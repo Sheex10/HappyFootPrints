@@ -1,6 +1,6 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,8 +14,8 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
     
-    <link type="text/css" rel="stylesheet" href="CSS/sesion.css">
-    <link rel="website icon" type="png" href="img/logotipo_para_pet_shop_perros_y_gatos-removebg-preview.png">
+    <link type="text/css" rel="stylesheet" href="{% static 'happy/CSS/sesion.css' %}">
+    <link rel="website icon" type="png" href="{% static 'happy/img/logotipo_para_pet_shop_perros_y_gatos-removebg-preview.png' %}">
 </head>
 
 <body>
@@ -34,13 +34,13 @@
                         <p class="warnings" id="warnings"></p>
                     </form>
                     <div class="pie-form">
-                        <a href="Clave.html">¿Olvidaste tu contraseña?</a>
-                        <a href="register.html">¿No tienes Cuenta? Registrate</a>
+                        <a href="{% url 'Clave' %}">¿Olvidaste tu contraseña?</a>
+                        <a href="{% url 'register' %}">¿No tienes Cuenta? Registrate</a>
                     </div>
                 </div>
                 <div class="inferior">
-                    <a href="Pag1.html">Volver</a>
-                    <a href="IniAdmin.html">Eres admin?</a>
+                    <a href="{% url 'inicio' %}">Volver</a>
+                    <a href="{% url 'IniAdmin' %}">Eres admin?</a>
                 </div>
             </div>
         </div>
