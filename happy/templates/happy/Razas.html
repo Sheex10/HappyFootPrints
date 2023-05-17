@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,23 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Razas</title>
        <!-- fuente de jquery -->
-    <link type="text/css" rel="stylesheet" href="CSS/estilos.css">
+    <link type="text/css" rel="stylesheet" href="{% static 'happy/CSS/estilos.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <img src="img/logotipo_para_pet_shop_perros_y_gatos-removebg-preview.png" alt="Logo de la marca">
+            <img src="{% static 'happy/img/logotipo_para_pet_shop_perros_y_gatos-removebg-preview.png' %}" alt="Logo de la marca">
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="Pag1.html">Home</a></li>
-                <li><a href="Perros.html">Perros</a></li>
-                <li><a href="Gatos.html">Gatos</a></li>
+                <li><a href="{% url 'Pag1' %}">Home</a></li>
+                <li><a href="{% url 'Perros' %}">Perros</a></li>
+                <li><a href="{% url 'Gatos' %}">Gatos</a></li>
             </ul>
         </nav>
-        <a class="btn" href="Carrito.html"><button>Carrito</button></a>
-        <a class="btn" href="InicioSesion.html"><button>Perfil</button></a>        
+        <a class="btn" href="{% url 'Carrito' %}"><button>Carrito</button></a>
+        <a class="btn" href="{% url 'InicioSesion' %}"><button>Perfil</button></a>        
     </header>
     <div id="razas">
         <h2 style="text-shadow: 2px 2px 5px rgb(87, 196, 54);">Da click y descubre todas 
