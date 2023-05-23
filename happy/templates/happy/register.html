@@ -6,7 +6,7 @@
     {% endblock formulario %}
      <!-- JQuery -->
 
-    {}
+    {%block sesion%}
         <div id="contenedor">
             <div id="central">
                 <div id="login">
@@ -38,7 +38,8 @@
                 </div>
             </div>
         </div>
-            
+    {%endblock sesion %}      
 
-    
+    {% block script %}
     <script src="js/Vregistrarse.js"></script>
+    {% endblock script %}
