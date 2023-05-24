@@ -33,8 +33,8 @@ class seguridad(models.Model):
 class administrador(models.Model):
     id_admin =models.IntegerField(primary_key=True, verbose_name="id de admin")
     rut = models.IntegerField(verbose_name="rut del admin")
-    nombre = models.CharField(verbose_name="nombre del admin")
-    apellido = models.CharField(verbose_name="apellido del admin")
+    nombre = models.CharField(max_length=50,verbose_name="nombre del admin")
+    apellido = models.CharField(max_length=50,verbose_name="apellido del admin")
     direccion = models.CharField(max_length=50, verbose_name="direccion del admin")
 
     def __str__(self):
@@ -43,13 +43,13 @@ class administrador(models.Model):
 class usuario(models.Model):
     id_admin =models.IntegerField(primary_key=True, verbose_name="id de usuario")
     rut = models.IntegerField(verbose_name="rut del usuario")
-    nombre = models.CharField(verbose_name="nombre del usuario")
-    apellido = models.CharField(verbose_name="apellido del usuario")
+    nombre = models.CharField(max_length=50,verbose_name="nombre del usuario")
+    apellido = models.CharField(max_length=50,verbose_name="apellido del usuario")
     direccion = models.CharField(max_length=50, verbose_name="direccion del usuario")
     tarjetas = models.CharField(max_length=50,verbose_name="tarjetas del usuario")
 
     def __str__(self):
-        return self.ususario
+        return self.usuario
     
 class producto(models.Model):
     id_producto =models.IntegerField(primary_key=True, verbose_name="id del producto")
@@ -61,7 +61,7 @@ class producto(models.Model):
         return self.producto
     
 class happyfootprint(models.Model):
-    nombre = models.CharField(verbose_name="nombre de la empresa")
+    nombre = models.CharField(max_length=50,verbose_name="nombre de la empresa")
     descripcion = models.CharField(max_length=150, verbose_name="descripción de la empresa")
     
     def __str__(self):
