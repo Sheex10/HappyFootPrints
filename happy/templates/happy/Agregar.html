@@ -14,15 +14,20 @@
                 
                     <br><br><div id="login"style="width: 550px;" class="formu"> 
                         <h1 style="text-align: center;">Complete los cuadros</h1>     
-                        <form action="#" method="POST" id="loginform" enctype="multipart/form-data">               
+                        <form action="#" method="POST" id="loginform" enctype="multipart/form-data">
+                            {% csrf_token %}               
                             <label for="foto">Agregue una foto:</label>
-                            <input type="file" id="foto">
+                            <input type="file" id="foto" name="foto">
                             <label for="nombre">Nombre del producto:</label>
-                            <input type="text" id="nombre">
+                            <input type="text" id="nombre" name="nombre">
+                            <label for="id">Id del producto:</label>
+                            <input type="text" id="id" name="id">
                             <label for="precio">Precio del producto:</label>
-                            <input type="text" id="precio">
+                            <input type="text" id="precio" name="precio">
+                            <label for="peso">Peso del producto:</label>
+                            <input type="text" id="peso" name="peso">
                             <label for="desc">Descripción del producto:</label>
-                            <br><textarea id="descripcion" style="width: 100%;" ></textarea>
+                            <br><textarea id="descripcion" style="width: 100%;" name="desc"></textarea>
                             <br><button class="colorHipervinculo" type="submit" >Agregar</a></button>
                             <p class="warnings" id="warnings"></p>
                         </form>                

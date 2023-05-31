@@ -14,6 +14,7 @@
                         Bienvenido!
                     </div>
                     <form action="#" method="POST" id="loginform" enctype="multipart/form-data">
+                        {% csrf_token %}
                         <p class="cositaBella">Que alegría que quieras 
                             formar parte de esta gran familia!</p>
                         <input type="text" id="nombre" name="nomPersona" placeholder="Nombre" >

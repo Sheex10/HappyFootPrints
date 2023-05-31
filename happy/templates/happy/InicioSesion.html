@@ -14,6 +14,7 @@
                         Bienvenido!
                     </div>
                     <form action="#" method="POST" id="loginform" enctype="multipart/form-data">
+                        {% csrf_token %}
                         <input type="text" id="nombre" name="usuario" placeholder="Usuario" >
                         
                         <input type="password" id="clave" name="password" placeholder="Contraseña" >

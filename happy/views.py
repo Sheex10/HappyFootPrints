@@ -1,4 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.contrib.auth.models import User
+from .models import producto
+from django.contrib.auth.hashers import check_password
+from django.contrib.auth import authenticate,login, logout
 
 # Create your views here.
 def Pag1(request):
@@ -8,9 +12,11 @@ def Perros(request):
     return render(request,'happy/Perros.html')
 
 def BañoEco(request):
+    
     return render(request,'happy/BañoEco.html')
 
 def Cama(request):
+
     return render(request,'happy/Cama.html')
 
 def Casa(request):
@@ -81,4 +87,19 @@ def Admin (request):
     return render(request,'happy/Admin.html')
 
 def Agregar(request):
+    
     return render(request,'happy/Agregar.html')
+
+def formProductos(request):
+    vIdProd= request.POST['id']
+    vDescripcion= request.POST['desc']
+    vPeso= request.POST['peso']
+    vPrecio= request.POST['precio']
+    vFoto=request.FILES['foto']
+
+
+    producto.objects.create(id_producto=vIdProd, descripcion=vDescripcion, peso=vPeso, precio=vPrecio, fotoProd=vFoto)
+
+    return redirect('Agregar')
+
+

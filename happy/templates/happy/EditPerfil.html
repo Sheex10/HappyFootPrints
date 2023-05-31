@@ -13,12 +13,12 @@
                     Bienvenido!
                 </div>
                 <form action="#" method="POST" id="loginform" enctype="multipart/form-data">
-
+                    {% csrf_token %}
                     <label for="nombre">Nombre de usuario:</label>
                     <input type="text" id="usuario" name="usuario" placeholder="Shee10">
                     <br>
                     <label for="nombre">Direccion:</label>
-                    <input type="text" id="direccion" name="usuario" placeholder="Colina 2, los olivos 1790">
+                    <input type="text" id="direccion" name="direcUser" placeholder="Colina 2, los olivos 1790">
                     <br>
                     <label for="nombre">Correo electronico:</label>
                     <input type="email" id="email" name="correoxd" placeholder="Shee@gmail.com">
