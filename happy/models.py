@@ -2,70 +2,88 @@ from django.db import models
 
 # Create your models here.
 
-#modelos para cada categoria HappyFootPrints
 
-class empleado(models.Model):
-    rut =models.IntegerField(primary_key=True, verbose_name="id de empleado")
-    nombre = models.CharField(max_length=30, verbose_name="nombre empleado")
-    apellidos = models.CharField(max_length=30, verbose_name="apellido empleado")
-    direccion = models.CharField(max_length=30, verbose_name="direccion empleado")
-
-    def __str__(self):
-        return self.empleado
-    
-class registro_venta(models.Model):
-    id_pedido =models.IntegerField(primary_key=True, verbose_name="id de pedido")
-    cantidad = models.IntegerField(verbose_name="cantidad de producto")
-    precio = models.IntegerField(verbose_name="precio de producto")
-    fecha = models.DateField(verbose_name="fecha de registro")
+class Usuario(models.model):
+    id_usuario =models.IntegerField(primary_key=True, verbose_name="id del usuario")
+    nombre=models.CharField(max_length=20, verbose_name="nombre del usuario")
+    apellido=models.CharField(max_length=20, verbose_name="apellido usuario")
+    correo=models.CharField(max_length=30, verbose_name="correo usuario")
+    clave=models.CharField(max_length=12, verbose_name="clave usuario")
+    telefono=models.IntegerField(verbose_name="telefono usuario")
+    id_rol =models.IntegerField(foreignkey=True, verbose_name="id del rol")
 
     def __str__(self):
-        return self.registro_venta
-    
-class seguridad(models.Model):
-    clave = models.CharField(max_length=12, verbose_name="clave de usuario")
-    correo = models.CharField(primary_key=True,max_length=30, verbose_name="correo del usuario")
-    correo_respaldo = models.CharField(max_length=30, verbose_name="correo de respaldo del usuario")
+        return self.Usuario
+#--------------------------------------
+class Registro_venta(models.model):
+    id_venta =models.IntegerField(primary_key=True, verbose_name="id de venta")
+    r_envio=models.CharField(max_length=100, verbose_name="registro del envio")
+    costo_envio=models.IntegerField(verbose_name="costo envío")
+    id_usuario =models.IntegerField(foreignkey=True, verbose_name="id del usuarioo")
 
     def __str__(self):
-        return self.seguridad
-    
-class administrador(models.Model):
-    id_admin =models.IntegerField(primary_key=True, verbose_name="id de admin")
-    rut = models.IntegerField(verbose_name="rut del admin")
-    nombre = models.CharField(max_length=50,verbose_name="nombre del admin")
-    apellido = models.CharField(max_length=50,verbose_name="apellido del admin")
-    direccion = models.CharField(max_length=50, verbose_name="direccion del admin")
-
-    def __str__(self):
-        return self.administrador
-    
-class usuario(models.Model):
-    id_admin =models.IntegerField(primary_key=True, verbose_name="id de usuario")
-    rut = models.IntegerField(verbose_name="rut del usuario")
-    nombre = models.CharField(max_length=50,verbose_name="nombre del usuario")
-    apellido = models.CharField(max_length=50,verbose_name="apellido del usuario")
-    direccion = models.CharField(max_length=50, verbose_name="direccion del usuario")
-    tarjetas = models.CharField(max_length=50,verbose_name="tarjetas del usuario")
-
-    def __str__(self):
-        return self.usuario
-    
-class producto(models.Model):
+        return self.Registro_venta
+#--------------------------------------
+class Producto(models.model):
     id_producto =models.IntegerField(primary_key=True, verbose_name="id del producto")
-    descripcion = models.CharField(max_length=150, verbose_name="descripcion del producto")
-    peso = models.IntegerField(verbose_name="peso del producto")
-    precio = models.IntegerField(verbose_name="precio del producto")
-    fotoProd= models.ImageField(upload_to="productos")
+    nombre=models.CharField(max_length=30, verbose_name="nombre del producto")
+    descripcion=models.CharField(max_length=100, verbose_name="descripcion producto")
+    precio=models.IntegerField(verbose_name="precio producto")
+    foto=models.ImageField(upload_to="foto producto")
+    id_categoria =models.IntegerField(foreignkey=True, verbose_name="id de categoria")
 
     def __str__(self):
-        return self.producto
-    
-class happyfootprint(models.Model):
-    nombre = models.CharField(max_length=50,verbose_name="nombre de la empresa")
-    descripcion = models.CharField(max_length=150, verbose_name="descripción de la empresa")
+        return self.Producto
+#-------------------------------------
+class Direccion(models.model):
+    id_direccion =models.IntegerField(primary_key=True, verbose_name="id de direccion")
+    calle=models.CharField(max_length=50, verbose_name="nombre calle")
+    numero=models.IntegerField(verbose_name="numero casa")
+    descripcion=models.CharField(max_length=100, verbose_name="descripcion direccion")
+    id_comuna =models.IntegerField(foreignkey=True, verbose_name="id de la comuna")
+    id_usuario=models.IntegerField(foreignkey=True, verbose_name="id del usuario")
     
     def __str__(self):
-        return self.happyfootprint
+        return self.Direccion
+#-------------------------------------
+class Comuna(models.model):
+    id_comuna =models.IntegerField(primary_key=True, verbose_name="id de comuna")
+    nombre=models.CharField(max_length=20, verbose_name="nombre comuna")
+    despacho=models.CharField(max_length=50, verbose_name="desc despacho")
+    id_region=models.IntegerField(foreignkey=True, verbose_name="id de region")
     
-#modelos finalizados
+    def __str__(self):
+        return self.Comuna
+#------------------------------------    
+class Detalle(models.model):
+    id_detalle =models.IntegerField(primary_key=True, verbose_name="id de detalle")
+    cantidad=models.IntegerField(verbose_name="cantidad")
+    id_venta=models.IntegerField(foreignkey=True, verbose_name="id de venta")
+    id_producto=models.IntegerField(foreignkey=True, verbose_name="id de producto")
+    
+    def __str__(self):
+        return self.Detalle
+#-----------------------------------
+class Rol(models.model):
+    id_rol=models.IntegerField(primary_key=True, verbose_name="id de rol")
+    nombre=models.CharField(max_length=30, verbose_name="nombre del rol")
+    
+    def __str__(self):
+        return self.Rol
+#-----------------------------------
+class Region(models.model):
+    id_region=models.IntegerField(primary_key=True, verbose_name="id de region")
+    nombre=models.CharField(max_length=30, verbose_name="nombre de region")
+    
+    def __str__(self):
+        return self.Region
+#----------------------------------
+class Categoria(models.model):
+    id_categoria=models.IntegerField(primary_key=True, verbose_name="id de rol")
+    nombre=models.CharField(max_length=30, verbose_name="nombre de categoria")
+    
+    def __str__(self):
+        return self.Categoria
+    
+#Modelos finalizados.
+# :D
