@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
-from .models import producto
+from .models import Producto
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth import authenticate,login, logout
 
@@ -98,7 +98,7 @@ def formProductos(request):
     vFoto=request.FILES['foto']
 
 
-    producto.objects.create(id_producto=vIdProd, descripcion=vDescripcion, peso=vPeso, precio=vPrecio, fotoProd=vFoto)
+    Producto.objects.create(id_producto=vIdProd, descripcion=vDescripcion, peso=vPeso, precio=vPrecio, fotoProd=vFoto)
 
     return redirect('Agregar')
 

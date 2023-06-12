@@ -4,7 +4,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
-from happy.models import usuario
+from happy.models import Usuario, Venta
 from .serializers import usuarioSerializers
 
 # Create your views here.
@@ -12,7 +12,7 @@ from .serializers import usuarioSerializers
 @api_view(['GET','POST'])
 def lista_usuario(request):
     if request.method == 'GET':
-        usuario2 = usuario.objects.all()
+        usuario2 = Usuario.objects.all()
         serializer = usuarioSerializers(usuario2,many=True)
         return Response(serializer.data)
 

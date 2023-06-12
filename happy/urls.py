@@ -1,4 +1,3 @@
-from django.contrib import admin
 from django.urls import path
 from .views import Pag1,Perros,BañoEco,Cama,Casa,Correa,Juguete,Plato,Gatos,Alfombra,rascador,collar,CamaGatos,JugueteGato,Arenero,Carrito,Razas,InicioSesion,IniAdmin,register,Editar,Editar2,EditPerfil,Clave,Clave2,administrador,Agregar,formProductos
 
