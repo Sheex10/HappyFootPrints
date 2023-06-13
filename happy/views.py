@@ -1,27 +1,18 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from .models import Producto
-from django.contrib.auth.hashers import check_password
-from django.contrib.auth import authenticate,login, logout
 
 # Create your views here.
 def Pag1(request):
     return render(request,'happy/Pag1.html')
 
 def Perros(request):
-    nombreMascota = "Copito de Nieve"
-    edadMascota = 2
-    razaMascota = "Pitbull"
 
-    contexto = {
-        "nombre": nombreMascota,
-        "edad": edadMascota,
-        "raza": razaMascota 
-    }
     return render(request,'happy/Perros.html')
 
 def BañoEco(request):
     
+
     return render(request,'happy/BañoEco.html')
 
 def Cama(request):
@@ -92,7 +83,7 @@ def Clave (request):
 def Clave2 (request):
     return render(request,'happy/Clave2.html')
 
-def administrador (request):
+def Admin (request):
     return render(request,'happy/Admin.html')
 
 def Agregar(request):
