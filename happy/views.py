@@ -9,6 +9,15 @@ def Pag1(request):
     return render(request,'happy/Pag1.html')
 
 def Perros(request):
+    nombreMascota = "Copito de Nieve"
+    edadMascota = 2
+    razaMascota = "Pitbull"
+
+    contexto = {
+        "nombre": nombreMascota,
+        "edad": edadMascota,
+        "raza": razaMascota 
+    }
     return render(request,'happy/Perros.html')
 
 def BañoEco(request):
