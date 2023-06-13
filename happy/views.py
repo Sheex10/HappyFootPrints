@@ -8,6 +8,7 @@ def Pag1(request):
 
 def Perros(request):
 
+    print("ola")
     return render(request,'happy/Perros.html')
 
 def BañoEco(request):
