@@ -8,13 +8,20 @@ def Pag1(request):
 
 def Perros(request):
 
-    print("ola")
     return render(request,'happy/Perros.html')
 
 def BañoEco(request):
-    
+    nombreB = "Baño Eco"
+    precioB = 24.990
+    descripcionB = "Baño Perro Puppy Potty Pad, es un espacio de aseo ecológico, perfecto para nuestras mascotas de compañía. Baño Ecológico para perros y mascotas."
 
-    return render(request,'happy/BañoEco.html')
+    contexto = {
+        "nombre" : nombreB,
+        "precio" : precioB,
+        "descripcion" : descripcionB
+    }
+
+    return render(request,'happy/BañoEco.html',contexto)
 
 def Cama(request):
 
