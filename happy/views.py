@@ -91,7 +91,7 @@ def Clave (request):
 def Clave2 (request):
     return render(request,'happy/Clave2.html')
 
-def Admin (request):
+def administrativo (request):
     return render(request,'happy/Admin.html')
 
 def Agregar(request):

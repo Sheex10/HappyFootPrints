@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import Pag1,Perros,BañoEco,Cama,Casa,Correa,Juguete,Plato,Gatos,Alfombra,rascador,collar,CamaGatos,JugueteGato,Arenero,Carrito,Razas,InicioSesion,IniAdmin,register,Editar,Editar2,EditPerfil,Clave,Clave2,administrador,Agregar,formProductos
+from .views import Pag1,Perros,BañoEco,Cama,Casa,Correa,Juguete,Plato,Gatos,Alfombra,rascador,collar,CamaGatos,JugueteGato,Arenero,Carrito,Razas,InicioSesion,IniAdmin,register,Editar,Editar2,EditPerfil,Clave,Clave2,administrativo,Agregar,formProductos
 
 urlpatterns = [
     path('',Pag1,name="inicio"),
@@ -11,7 +11,7 @@ urlpatterns = [
     path('EditPerfil',EditPerfil,name="EditPerfil"),
     path('Clave',Clave,name="Clave"),
     path('Clave2',Clave2,name="Clave2"),
-    path('administrador',administrador,name="administrador"),
+    path('administrativo',administrativo,name="administrativo"),
     path('Agregar',Agregar,name="Agregar"),
     path('formProductos',formProductos, name="formProductos"),
 
