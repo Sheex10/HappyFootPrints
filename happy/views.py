@@ -24,7 +24,7 @@ def BañoEco(request):
     return render(request,'happy/BañoEco.html',contexto)
 
 def Cama(request):
-
+    
     return render(request,'happy/Cama.html')
 
 def Casa(request):
