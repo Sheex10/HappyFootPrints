@@ -137,14 +137,14 @@ def CamaGatos(request):
     return render(request,'happy/CamaGatos.html',contexto)
 
 def JugueteGato(request):
-    nombreJ = "Juguete loco rosado"
-    precioJ = "PRECIO: $2.390"
-    descripcionJ = "Juguete en forma de huevo incentiva a nuestros gatos a jugar y moverse continuamente. Tiene plumas y un cascabel para mantener curioso al gato."
+    nombreJu = "Juguete loco rosado"
+    precioJu = "PRECIO: $2.390"
+    descripcionJu = "Juguete en forma de huevo incentiva a nuestros gatos a jugar y moverse continuamente. Tiene plumas y un cascabel para mantener curioso al gato."
 
     contexto = {
-		"nombre" : nombreJ,
-		"precio" : precioJ,
-		"descripcion" : descripcionJ
+		"nombre" : nombreJu,
+		"precio" : precioJu,
+		"descripcion" : descripcionJu 
 }
     return render(request,'happy/JugueteGato.html',contexto)
 

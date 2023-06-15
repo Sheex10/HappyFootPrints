@@ -13,8 +13,8 @@
                 src="{% static 'happy/img/1200x1200_buen_amigo-removebg-preview.png' %}" alt="No disponible">
             </div>
             <div class="col-md-6 col-sm-12">
-                <br><br><h2 class="titulosdesc">Juguete loco rosado</h2>
-                <h4 class="titulosdesc">$2.390</h4>                 
+                <br><br><h2 class="titulosdesc">{{ nombre }}</h2>
+                <h4 class="titulosdesc">{{ precio }}</h4>                 
                 <br><br><br><input class="cant" type="number" min="1" max="200">
                 <button class="button">Añadir al carrito</button>
             </div>
@@ -24,8 +24,7 @@
             <div class="col-md-12 col-sm-12">
                 <hr class="solid">
                 <h2 class="titulosdesc">Descripción</h2>
-                <h5 class="titulosdesc">Juguete en forma de huevo incentiva a nuestros gatos a jugar
-                    y moverse continuamente. Tiene plumas y un cascabel para mantener curioso al gato.
+                <h5 class="titulosdesc">{{descripcion}}
                 </h5>
             </div>
         </div>
