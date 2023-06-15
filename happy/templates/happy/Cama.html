@@ -13,8 +13,8 @@
                     src="{% static 'happy/img/CAMA-BEIGE-removebg-preview.png' %}" alt="No disponible"> </a>
             </div>
             <div class="col-md-6 col-sm-12">
-                <br><h2 class="desc2">Cama antiestrés</h2>
-                <h4 class="titulosdesc">$30.990</h4> 
+                <br><h2 class="desc2">{{ nombre }}</h2>
+                <h4 class="titulosdesc">{{ precio }}</h4> 
                 <br><br><br><input class="cant" type="number" min="1" max="200">
                 <button class="button">Añadir al carrito</button>
             </div>
@@ -23,9 +23,7 @@
             <div class="col-md-12 col-sm-12">
                 <hr class="solid">
                 <h2 class="titulosdesc">Descripción</h2>
-                <h5 class="titulosdesc">La cama antiestrés -100-120cm- Damasco disponibles en diferentes tamaños.
-                    Esta cama calmante tiene un tejido especial de suave felpa, para que tu mascota esté comoda 
-                    y relajada.</h5>
+                <h5 class="titulosdesc">{{ descripcion }}</h5>
             </div>
         </div>
     </div> 

@@ -24,20 +24,65 @@ def BañoEco(request):
     return render(request,'happy/BañoEco.html',contexto)
 
 def Cama(request):
-    
-    return render(request,'happy/Cama.html')
+    nombreC = "Cama antiestres"
+    precioC = "PRECIO : $30.990"
+    descripcionC = "La cama antiestrés -100-120cm- Damasco disponibles en diferentes tamaños.Esta cama calmante tiene un tejido especial de suave felpa, para que tu mascota esté comoda y relajada."
+
+    contexto = {
+        "nombre" : nombreC,
+        "precio" : precioC,
+        "descripcion" : descripcionC
+    }
+    return render(request,'happy/Cama.html',contexto)
 
 def Casa(request):
-    return render(request,'happy/Casa.html')
+    nombreCP = "Casa plastica"
+    precioCP = "PRECIO : $68.990"
+    descripcionCP = "Casa para perros diseñada de un tamaño ideal para razas de tamaño mediano o grandes. Tiene un piso elevado para aislar al canino y también seguro. Su material es resistente a la humedad, y es sencillo de limpiar. Protección de rayos UV."
+
+    contexto = {
+        "nombre" : nombreCP,
+        "precio" : precioCP,
+        "descripcion" : descripcionCP
+    } 
+    return render(request,'happy/Casa.html',contexto)
 
 def Correa(request):
-    return render(request,'happy/Correa.html')
+    nombreCO = "Correa de paseo"
+    precioCO = "PRECIO : $8.990"
+    descripcionCO = "Hecha de poliester suave y duradero, la correa para perros Atlanta es super suave en las manos y viene con un gancho que se puede bloquear para una experiencia segura."
+    
+    contexto = {
+        "nombre" : nombreCO,
+        "precio" : precioCO,
+        "descripcion" : descripcionCO
+    }
+
+    return render(request,'happy/Correa.html',contexto)
 
 def Juguete(request):
-    return render(request,'happy/Juguete.html')
+    nombreJ = "Juguete de perro"
+    precioJ = "PRECIO : $5.490"
+    descripcionJ = "Hecho de algodón natural con fibras vegetales. Cuerda colorida co pelota incluida perfecta para los animales que muerden constantemente, ya que ayuda a la dentadura del perro."
+
+    contexto = {
+        "nombre" : nombreJ,
+        "precio" : precioJ,
+        "descripcion" : descripcionJ
+    }
+    return render(request,'happy/Juguete.html',contexto)
 
 def Plato(request):
-    return render(request,'happy/Plato.html')
+    nombreP = "Comedero y Bebedero"
+    precioP = "PRECIO : $8.990"
+    descripcionP = "Bonve Pet 2x400ML. Comedero para perros de acero inoxidable con base de silicona antideslizante, 2 cuencos comedero para comida y agua."
+
+    contexto = {
+        "nombre" : nombreP,
+        "precio" : precioP,
+        "descripcion" : descripcionP
+    }
+    return render(request,'happy/Plato.html',contexto)
 
 def Gatos(request):
     return render(request,'happy/Gatos.html')

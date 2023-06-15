@@ -13,8 +13,8 @@
                     src="{% static 'happy/img/Casa-beige-removebg-preview-removebg-preview.png' %}" alt="No disponible"> </a>
             </div>
             <div class="col-md-6 col-sm-12">
-                <br><h2 class="titulosdesc">Casa plástica</h2>
-                <h4 class="titulosdesc">$68.990</h4>                  
+                <br><h2 class="titulosdesc">{{ nombre }}</h2>
+                <h4 class="titulosdesc">{{ precio }}</h4>                  
                 <br><br><br><input class="cant" type="number" min="1" max="200">
                 <button class="button">Añadir al carrito</button>
             </div>
@@ -23,10 +23,7 @@
             <div class="col-md-12 col-sm-12">
                 <hr class="rounded">
                 <h2 class="titulosdesc">Descripción</h2>
-                <h5 class="titulosdesc">Casa para perros diseñada de un tamaño ideal para razas
-                    de tamaño mediano o grandes. Tiene un piso elevado para aislar al canino y
-                    y también seguro. Su material es resistente a la humedad, y es sencillo de limpiar.
-                    Protección de rayos UV.</h5>
+                <h5 class="titulosdesc">{{ descripcion }}</h5>
             </div>
         </div>  
         {% endblock cuerpoAlfombra %}
