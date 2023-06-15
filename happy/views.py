@@ -88,22 +88,78 @@ def Gatos(request):
     return render(request,'happy/Gatos.html')
 
 def Alfombra(request):
-    return render(request,'happy/Alfombra.html')
+    nombreAl = "Alfombra Sanitaria"
+    precioAl = "PRECIO: $10.990"
+    descripcionAl = "La almohadilla de arena para gatos puede mantener el suelo limpio y su casa libre de malos olores. Evita que la arena ingrese al piso y lo mantiene limpio."
+
+    contexto = {
+        "nombre" : nombreAl,
+        "precio" : precioAl,
+        "descripcion" : descripcionAl
+    }
+    return render(request,'happy/Alfombra.html',contexto)
 
 def rascador(request):
-    return render(request, 'happy/rascador.html')
+    nombreR = "Rascador de 3 niveles"
+    precioR = "PRECIO: $47.990"
+    descripcionR = "Rascador de 3 niveles de 90 cm con distintos juguetes,casitas y dos hamacas que le ayudarán a tu gato a tener un mejor descanso y 	experiencia."
+    
+    contexto = {
+        "nombre" : nombreR,
+        "precio" : precioR,
+        "descripcion" : descripcionR
+    }
+
+    return render(request, 'happy/rascador.html',contexto)
 
 def collar(request):
-    return render(request,'happy/collar.html')
+    nombreCollar = "Collar para gatos naranjo"
+    precioCollar = "PRECIO: $5.990"
+    descripcionCollar= "Collar color naranjo con distintas lineas celestes. Su tela es bastante comoda y no le va a incomodar, y es ajustable."
+
+    contexto = {
+		"nombre" : nombreCollar,
+		"precio" : precioCollar,
+		"descripcion" : descripcionCollar
+}
+    return render(request,'happy/collar.html',contexto)
 
 def CamaGatos(request):
-    return render(request,'happy/CamaGatos.html')
+    nombreCGA = "Cama en forma de iglú café"
+    precioCGA = "PRECIO: $23.990"
+    descripcionCGA = "La cama en forma de iglú es muy comoda y agradable, especialmente 	diseñada para tu felino. Esta forma es ideal para generar amyor comodidad y 	tranquilidad a la hora de dormir"
+
+    contexto = {
+		"nombre" : nombreCGA,
+		"precio" : precioCGA,
+		"descripcion" : descripcionCGA
+}
+    return render(request,'happy/CamaGatos.html',contexto)
 
 def JugueteGato(request):
-    return render(request,'happy/JugueteGato.html')
+    nombreJ = "Juguete loco rosado"
+    precioJ = "PRECIO: $2.390"
+    descripcionJ = "Juguete en forma de huevo incentiva a nuestros gatos a jugar y moverse continuamente. Tiene plumas y un cascabel para mantener curioso al gato."
+
+    contexto = {
+		"nombre" : nombreJ,
+		"precio" : precioJ,
+		"descripcion" : descripcionJ
+}
+    return render(request,'happy/JugueteGato.html',contexto)
 
 def Arenero(request):
-    return render(request,'happy/Arenero.html')
+        nombreAr = "Arenero con techo"
+        precioAr = "PRECIO : $15.990"
+        descripcionAr = "Baño sanitario para gatos, incluyendo techo para mayor privacidad de tu felino para que no salga el mal olor hacia el exterior."
+
+        contexto = {
+            "nombre" : nombreAr,
+            "precio" : precioAr,
+            "descripcion" : descripcionAr
+        }
+    
+        return render(request,'happy/Arenero.html',contexto)
 
 
 def Razas(request):
