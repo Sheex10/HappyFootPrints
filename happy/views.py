@@ -6,7 +6,12 @@ from .models import Producto, Usuario
 def Pag1(request):
     return render(request,'happy/Pag1.html')
 
+def Gatos(request):
+
+    return render(request,'happy/Gatos.html')
+
 def Perros(request):
+    
 
     return render(request,'happy/Perros.html')
 
@@ -82,10 +87,9 @@ def Plato(request):
         "precio" : precioP,
         "descripcion" : descripcionP
     }
-    return render(request,'happy/Plato.html',contexto)
+    return render(request,'happy/Plato.html',contexto )
 
-def Gatos(request):
-    return render(request,'happy/Gatos.html')
+
 
 def Alfombra(request):
     nombreAl = "Alfombra Sanitaria"
