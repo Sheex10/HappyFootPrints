@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
-from .models import Producto
+from .models import Producto, Usuario
 
 # Create your views here.
 def Pag1(request):
@@ -193,7 +193,7 @@ def Clave2 (request):
     return render(request,'happy/Clave2.html')
 
 def administrativo (request):
-    return render(request,'happy/Admin.html')
+    return render(request,'happy/administrativo.html')
 
 def Agregar(request):
     
@@ -211,4 +211,12 @@ def formProductos(request):
 
     return redirect('Agregar')
 
+def formSesion(request):
+    vUsuario = request.POST['usuario']
+    vContraseña = request.POST['password']
+
+    Usuario.objects.create(correo=vUsuario, clave=vContraseña)
+
+    return redirect('Pag1')
+#--
 
