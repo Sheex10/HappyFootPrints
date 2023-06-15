@@ -1,19 +1,26 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
-from .models import Producto, Usuario
+from .models import Producto, Usuario, Categoria
 
 # Create your views here.
 def Pag1(request):
     return render(request,'happy/Pag1.html')
 
 def Gatos(request):
+<<<<<<< Updated upstream
 
     return render(request,'happy/Gatos.html')
 
+=======
+    return render(request,'happy/Gatos.html')
+
+
+>>>>>>> Stashed changes
 def Perros(request):
     
 
     return render(request,'happy/Perros.html')
+
 
 def BañoEco(request):
     nombreB = "Baño Eco"
@@ -200,8 +207,12 @@ def administrativo (request):
     return render(request,'happy/administrativo.html')
 
 def Agregar(request):
-    
-    return render(request,'happy/Agregar.html')
+    listaCategoria=Categoria.objects.all()
+    contexto={
+        "Categorias":listaCategoria
+
+    }
+    return render(request,'happy/Agregar.html', contexto)
 
 def formProductos(request):
     vIdProd= request.POST['id']
@@ -209,11 +220,16 @@ def formProductos(request):
     vPeso= request.POST['peso']
     vPrecio= request.POST['precio']
     vFoto=request.FILES['foto']
+    vCategoria=request.FILES['categoria']
 
+    vRegCategoria=Categoria.objects.get(categoria=vCategoria)
 
     Producto.objects.create(id_producto=vIdProd, descripcion=vDescripcion, peso=vPeso, precio=vPrecio, fotoProd=vFoto)
 
-    return redirect('Agregar')
+    if vRegCategoria.id_categoria==4:
+        return redirect('Perros')
+    if vRegCategoria.id_categoria==3:
+        return redirect('Gatos')
 
 def formSesion(request):
     vUsuario = request.POST['usuario']
@@ -223,4 +239,3 @@ def formSesion(request):
 
     return redirect('Pag1')
 #--
-
