@@ -1,25 +1,25 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from .models import Producto, Usuario, Categoria
+from django.contrib.auth.models import User
+from django.contrib.auth.hashers import check_password
+from django.contrib.auth import authenticate,login, logout
+from django.contrib import messages
+
 
 # Create your views here.
 def Pag1(request):
     return render(request,'happy/Pag1.html')
 
 def Gatos(request):
-<<<<<<< Updated upstream
-
-    return render(request,'happy/Gatos.html')
-
-=======
-    return render(request,'happy/Gatos.html')
-
-
->>>>>>> Stashed changes
+    return render(request,'happy/Gatos')
 def Perros(request):
-    
+    listaProductos = Producto.objects.filter(categoria = 4)
+    contexto={
+        "nomProd": listaProductos
 
-    return render(request,'happy/Perros.html')
+    }
+    return render(request,'happy/Perros.html', contexto)
 
 
 def BañoEco(request):
@@ -59,15 +59,10 @@ def Casa(request):
     } 
     return render(request,'happy/Casa.html',contexto)
 
-def Correa(request):
-    nombreCO = "Correa de paseo"
-    precioCO = "PRECIO : $8.990"
-    descripcionCO = "Hecha de poliester suave y duradero, la correa para perros Atlanta es super suave en las manos y viene con un gancho que se puede bloquear para una experiencia segura."
-    
-    contexto = {
-        "nombre" : nombreCO,
-        "precio" : precioCO,
-        "descripcion" : descripcionCO
+def Correa(request,id):
+    listaC=Producto.objects.get(id_producto=id)
+    contexto={
+        "nombree":listaC
     }
 
     return render(request,'happy/Correa.html',contexto)
@@ -180,10 +175,9 @@ def Carrito(request):
     return render(request,'happy/Carrito.html')
 
 def InicioSesion (request):
+    logout(request)
     return render(request,'happy/InicioSesion.html')
 
-def IniAdmin (request):
-    return render(request,'happy/IniAdmin.html')
 
 def register (request):
     return render(request,'happy/register.html')
@@ -217,14 +211,14 @@ def Agregar(request):
 def formProductos(request):
     vIdProd= request.POST['id']
     vDescripcion= request.POST['desc']
-    vPeso= request.POST['peso']
     vPrecio= request.POST['precio']
     vFoto=request.FILES['foto']
-    vCategoria=request.FILES['categoria']
+    vCategoria=request.POST['categoria']
+    vStock=request.POST['stock']
+    vNombre=request.POST['nombre']
+    vRegCategoria=Categoria.objects.get(id_categoria=vCategoria)
 
-    vRegCategoria=Categoria.objects.get(categoria=vCategoria)
-
-    Producto.objects.create(id_producto=vIdProd, descripcion=vDescripcion, peso=vPeso, precio=vPrecio, fotoProd=vFoto)
+    Producto.objects.create(nombre=vNombre, id_producto=vIdProd, descripcion=vDescripcion,  precio=vPrecio, foto=vFoto, categoria=vRegCategoria, stock=vStock)
 
     if vRegCategoria.id_categoria==4:
         return redirect('Perros')
@@ -232,10 +226,48 @@ def formProductos(request):
         return redirect('Gatos')
 
 def formSesion(request):
-    vUsuario = request.POST['usuario']
-    vContraseña = request.POST['password']
+    try:
+        vCorreo = request.POST['correoUser']
+        vClave = request.POST['password']
+        vRol = 0
+        vRun= 0
+        registro = Usuario.objects.all()
 
-    Usuario.objects.create(correo=vUsuario, clave=vContraseña)
 
-    return redirect('Pag1')
+        for Rol in registro:
+            if Rol.correo == vCorreo and Rol.clave == vClave:
+
+                    vRun = Rol.id_usuario
+                    vRol = Rol.rol.id_rol
+        user1 = User.objects.get(username = vCorreo)
+        print(user1.username)
+        pass_valida = check_password(vClave,user1.password)
+
+        if not pass_valida:
+            messages.error(request,"El usuario o la contraseña son incorrectos")
+            return redirect('IniSesion')
+
+        user = authenticate(username=vCorreo,password = vClave)
+
+        print(user)
+        if user is not None:
+            if vRol == 2:
+                login(request,user)
+                return redirect('Perros')
+
+
+            if vRol == 1:
+                login(request,user)
+                return redirect('Agregar') 
+
+            if vRol == 0:
+                messages.success(request, "Usuario no registrado")
+                return redirect('IniSesion')
+    except User.DoesNotExist:
+            messages.error(request,"El usuario no existe")
+            return redirect('IniSesion')
+    except Exception as e:
+        print(e)
 #--
+#preguntar al profe xd
+

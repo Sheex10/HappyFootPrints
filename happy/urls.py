@@ -1,10 +1,9 @@
 from django.urls import path
-from .views import Pag1,Perros,BañoEco,Cama,Casa,Correa,Juguete,Plato,Gatos,Alfombra,rascador,collar,CamaGatos,JugueteGato,Arenero,Carrito,Razas,InicioSesion,IniAdmin,register,Editar,Editar2,EditPerfil,Clave,Clave2,administrativo,Agregar,formProductos
+from .views import Pag1,Perros,BañoEco,Cama,Casa,Correa,Juguete,Plato,Gatos,Alfombra,rascador,collar,CamaGatos,JugueteGato,Arenero,Carrito,Razas,InicioSesion,register,Editar,Editar2,EditPerfil,Clave,Clave2,administrativo,Agregar,formProductos,formSesion
 
 urlpatterns = [
     path('',Pag1,name="inicio"),
     path('InicioSesion',InicioSesion, name="IniSesion"),
-    path('InicioAdmin',IniAdmin,name="IniAdmin"),
     path('registro',register,name="register"),
     path('Editar',Editar,name="Editar"),
     path('Editar2',Editar2,name="Editar2"),
@@ -14,13 +13,14 @@ urlpatterns = [
     path('administrativo',administrativo,name="administrativo"),
     path('Agregar',Agregar,name="Agregar"),
     path('formProductos',formProductos, name="formProductos"),
+    path('formSesion',formSesion, name="formSesion"),
 
 
     path('perros',Perros,name="Perros"),
     path('bañoeco',BañoEco, name="BañoEco"),
     path('cama',Cama, name="Cama"),
     path('casa',Casa, name="Casa"),
-    path('correa',Correa, name="Correa"),
+    path('correa/<int:id>',Correa, name="Correa"),
     path('juguete',Juguete, name="Juguete"),
     path('plato',Plato, name="Plato"),
 
