@@ -1,10 +1,9 @@
 from django.urls import path
-from .views import Pag1,Perros,BañoEco,Cama,Casa,Correa,Juguete,Plato,Gatos,Alfombra,rascador,collar,CamaGatos,JugueteGato,Arenero,Carrito,Razas,InicioSesion,IniAdmin,register,Editar,Editar2,EditPerfil,Clave,Clave2,administrativo,Agregar,formProductos
+from .views import Pag1,Perros,BañoEco,Cama,Casa,Correa,Juguete,Plato,Gatos,Alfombra,rascador,collar,CamaGatos,JugueteGato,Arenero,Carrito,Razas,InicioSesion,register,Editar,Editar2,EditPerfil,Clave,Clave2,administrativo,Agregar,formProductos
 
 urlpatterns = [
     path('',Pag1,name="inicio"),
     path('InicioSesion',InicioSesion, name="IniSesion"),
-    path('InicioAdmin',IniAdmin,name="IniAdmin"),
     path('registro',register,name="register"),
     path('Editar',Editar,name="Editar"),
     path('Editar2',Editar2,name="Editar2"),
