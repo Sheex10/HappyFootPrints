@@ -3,7 +3,7 @@
 
     {% block formulario %}
     <title>Editar Producto</title>
-    {%% endblock formulario %}
+    {% endblock formulario %}
 
     {% block sesion %}
     <div class="container">
@@ -29,7 +29,7 @@
                     y también seguro. Su material es resistente a la humedad, y es sencillo de limpiar.
                     Protección de rayos UV.</h5>
                 <button id="edit">Editar texto</button>
-                <br><br><button class="colorHipervinculo" id="edit" style="width: 100%;"><a href="{% url 'Admin' %}">Guardar cambios</a></button>
+                <br><br><button class="colorHipervinculo" id="edit" style="width: 100%;"><a href="{% url 'administrativo' %}">Guardar cambios</a></button>
             </div>
         </div>
     </div>

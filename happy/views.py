@@ -12,7 +12,7 @@ def Pag1(request):
     return render(request,'happy/Pag1.html')
 
 def Gatos(request):
-    return render(request,'happy/Gatos')
+    return render(request,'happy/Gatos.html')
 def Perros(request):
     listaProductos = Producto.objects.filter(categoria = 4)
     contexto={

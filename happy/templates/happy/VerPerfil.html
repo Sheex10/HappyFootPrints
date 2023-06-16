@@ -1,19 +1,28 @@
 {% extends 'happy/PlantillaAlfombra.html' %}
 {% load static %}
     {% block alfombra %}
-    <title>Ver perfil</title>
+        <title>Ver perfil</title>
     {% endblock alfombra %}
 
-{% block cuerpoAlfombra %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-12">
-                <img class="fotoperro2" src="{% static '' %}" alt="No disponible">
-            </div>
-            <div class="col-md-6 col-sm-12">
-                <h3 class="titulosdesc">Nombre:</h3>
-                <h4>Felipe</h4>
+    {% block cuerpoAlfombra %}
+        <br><div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-12"> </div>
+                <div class="col-md-4 col-sm-12">
+                    <img id="fotoperro2" style="border-radius: 10%; margin: 10%;" src="{% static 'happy/img/pipe.jpeg' %}" alt="No disponible">
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <h3 class="titulosdesc">Nombre de Usuario:</h3>
+                    <h4>Shee10</h4>
+                    <h3 class="titulosdesc">Dirección:</h3>
+                    <h4>Colina 2, los olivos 1790</h4>
+                    <h3 class="titulosdesc">Correo:</h3>
+                    <h4>Shee@gmail.com</h4>
+                    <h3 class="titulosdesc">Edad:</h3>
+                    <h4>18</h4>
+                    <br><button class="colorHipervinculo" id="edit"><a href="{% url 'EditPerfil' %}">Editar Perfil</a></button>
+                </div>
+                <div class="col-md-4 col-md-12"></div>
             </div>
         </div>
-    </div>
-{% endblock cuerpoAlfombra}
+    {% endblock cuerpoAlfombra %}
