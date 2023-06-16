@@ -167,6 +167,8 @@ def Arenero(request):
     
         return render(request,'happy/Arenero.html',contexto)
 
+def VerPerfil(request):
+    return render(request,'happy/VerPerfil.html')
 
 def Razas(request):
     return render(request,'happy/Razas.html')
