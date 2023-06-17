@@ -273,3 +273,9 @@ def formSesion(request):
 #--
 #preguntar al profe xd
 
+def buscar_interno_producto(request,id):
+    prod = Producto.objects.get(id_producto = id)
+    contexto = {
+        "nombree": prod
+    }
+    return render(request,'happy/Correa.html',contexto)

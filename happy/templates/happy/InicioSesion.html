@@ -13,7 +13,7 @@
             <div class="titulo">
                 Bienvenido!
             </div>
-            <form action="#" method="POST" id="loginform" enctype="multipart/form-data" name="formulario">
+            <form action="{% url 'formSesion' %}" method="POST" id="loginform" enctype="multipart/form-data" name="formulario">
                 {% csrf_token %}
                 <input type="text" id="nombre" name="correoUser" placeholder="Usuario">
 
