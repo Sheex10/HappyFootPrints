@@ -147,8 +147,9 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 85px;
+    height: 100px;
     padding: 5px 10%;
+
 }
 
 .header .logo{
@@ -175,7 +176,7 @@ img{
 }
 
 .header .nav-links li:hover{
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .header .nav-links a{
