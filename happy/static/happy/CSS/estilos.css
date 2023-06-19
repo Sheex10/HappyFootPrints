@@ -141,9 +141,12 @@ img{
   background-color: rgba(255, 255, 255, 0.5) !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
+
+
 /* CSS PARA LA NAV BAR */
 .header{
-    background-color: #50bb67;
+    background-color: rgb(75, 171, 98);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -159,7 +162,7 @@ img{
 .header .logo img{
     height: 100px;
     width: auto;
-    transition: all 0.3s;
+    transition: all 0.2s;
 }
 
 .header .logo img:hover{
@@ -181,7 +184,7 @@ img{
 
 .header .nav-links a{
     font-size: 700;
-    color: #eceff1;
+    color: #000000;
     text-decoration: none;    
 }
 
@@ -205,6 +208,8 @@ img{
     color: #ffbc0e;
     transform: scale(1.1);
 }
+
+
 
 /*cantidad de productos*/
 .cant{
