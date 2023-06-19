@@ -142,10 +142,12 @@ img{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+
+
 /* CSS PARA LA NAV BAR */
-/*.header{
-    background-color: rgb(75, 75, 171);
-    display: inline;
+.header{
+    background-color: rgb(75, 171, 98);
+    display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100px;
@@ -182,7 +184,7 @@ img{
 
 .header .nav-links a{
     font-size: 700;
-    color: #eceff1;
+    color: #000000;
     text-decoration: none;    
 }
 
@@ -206,7 +208,9 @@ img{
     color: #ffbc0e;
     transform: scale(1.1);
 }
-*/
+
+
+
 /*cantidad de productos*/
 .cant{
   background-color: rgb(255, 255, 255);
