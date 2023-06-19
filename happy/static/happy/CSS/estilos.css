@@ -141,10 +141,11 @@ img{
   background-color: rgba(255, 255, 255, 0.5) !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
 /* CSS PARA LA NAV BAR */
-.header{
-    background-color: #50bb67;
-    display: flex;
+/*.header{
+    background-color: rgb(75, 75, 171);
+    display: inline;
     justify-content: space-between;
     align-items: center;
     height: 100px;
@@ -159,7 +160,7 @@ img{
 .header .logo img{
     height: 100px;
     width: auto;
-    transition: all 0.3s;
+    transition: all 0.2s;
 }
 
 .header .logo img:hover{
@@ -205,7 +206,7 @@ img{
     color: #ffbc0e;
     transform: scale(1.1);
 }
-
+*/
 /*cantidad de productos*/
 .cant{
   background-color: rgb(255, 255, 255);
