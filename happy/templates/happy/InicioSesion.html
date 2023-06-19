@@ -13,7 +13,7 @@
             <div class="titulo">
                 Bienvenido!
             </div>
-            <form action="{% url 'formSesion' %}" method="POST" id="loginform" enctype="multipart/form-data" name="formulario">
+            <form action="{% url 'login' %}" method="POST" id="loginform" enctype="multipart/form-data" name="formulario">
                 {% csrf_token %}
                 <input type="text" id="nombre" name="correoUser" placeholder="Usuario">
 
@@ -29,10 +29,6 @@
                 </ul>
                 {% endif %}
             </form>
-            <div class="pie-form">
-                <a href="{% url 'Clave' %}">¿Olvidaste tu contraseña?</a>
-                <a href="{% url 'register' %}">¿No tienes Cuenta? Registrate</a>
-            </div>
         </div>
         <div class="inferior">
             <a href="{% url 'inicio' %}">Volver</a>

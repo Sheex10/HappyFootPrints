@@ -69,7 +69,7 @@ TEMPLATES = [
         },
     },
 ]
-LOGIN_REDIRECT_URL ="menu"
+LOGIN_REDIRECT_URL ="Pag1"
 WSGI_APPLICATION = 'HappyFootPrints.wsgi.application'
 
 

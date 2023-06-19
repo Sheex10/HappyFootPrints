@@ -8,6 +8,8 @@ from happy.models import Usuario, Venta
 from .serializers import UsuarioSerializers
 
 # Create your views here.
+
+
 @csrf_exempt
 @api_view(['GET','POST'])
 def lista_usuario(request):

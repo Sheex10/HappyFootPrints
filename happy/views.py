@@ -5,9 +5,25 @@ from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth import authenticate,login, logout
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+def home(request):
+	context = {}
+	return render(request, 'administrador/home.html', context)
+
+
+@login_required 
+def menu(request):
+	request.session["usuario"]="user"
+	usuario=request.session["usuario"]
+	context = {'usuario':usuario}
+	return render(request, 'happy/Pag1.html', context)
+
+
+
+
 def Pag1(request):
     return render(request,'happy/Pag1.html')
 
@@ -227,51 +243,6 @@ def formProductos(request):
     if vRegCategoria.id_categoria==3:
         return redirect('Gatos')
 
-def formSesion(request):
-    try:
-        vCorreo = request.POST['correoUser']
-        vClave = request.POST['password']
-        vRol = 0
-        vRun= 0
-        registro = Usuario.objects.all()
-
-
-        for Rol in registro:
-            if Rol.correo == vCorreo and Rol.clave == vClave:
-
-                    vRun = Rol.id_usuario
-                    vRol = Rol.rol.id_rol
-        user1 = User.objects.get(username = vCorreo)
-        print(user1.username)
-        pass_valida = check_password(vClave,user1.password)
-
-        if not pass_valida:
-            messages.error(request,"El usuario o la contraseña son incorrectos")
-            return redirect('IniSesion')
-
-        user = authenticate(username=vCorreo,password = vClave)
-
-        print(user)
-        if user is not None:
-            if vRol == 2:
-                login(request,user)
-                return redirect('Perros')
-
-
-            if vRol == 1:
-                login(request,user)
-                return redirect('Agregar') 
-
-            if vRol == 0:
-                messages.success(request, "Usuario no registrado")
-                return redirect('IniSesion')
-    except User.DoesNotExist:
-            messages.error(request,"El usuario no existe")
-            return redirect('IniSesion')
-    except Exception as e:
-        print(e)
-#--
-#preguntar al profe xd
 
 def buscar_interno_producto(request,id):
     prod = Producto.objects.get(id_producto = id)
@@ -279,3 +250,9 @@ def buscar_interno_producto(request,id):
         "nombree": prod
     }
     return render(request,'happy/Correa.html',contexto)
+
+def clavectm(request):
+    vClaveqla= request.POST['password']
+    vClave2= request.POST['ConfiContraXd']
+
+    return render(request, 'happy/Pag1.html')

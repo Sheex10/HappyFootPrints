@@ -13,7 +13,7 @@
                         Recuperar contraseña
                     </div>
                     <form action="#" method="POST" id="loginform" enctype="multipart/form-data">
-
+                    {% csrf_token %}
                         <input type="password" id="clave" placeholder="Contraseña" name="password" >
 
                         <input type="password" id="confirmacion" placeholder="Confirmar Contraseña" name="ConfiContraXd" >
