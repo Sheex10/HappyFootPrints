@@ -23,3 +23,28 @@ def lista_usuario(request):
             return Response(serializer.data,status= status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET','PUT','DELETE'])
+def detalle_usuario(request, id):
+    """
+
+    Get, update, o delete de un usuario en particular
+    """
+    try:
+        usuario = Usuario.objects.get(id_admin=id)
+    except Usuario.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    if request.method == 'GET':
+        serializer = Usuario.Serializer(usuario)
+        return Response(serializer.data)
+    if request.method == 'PUT':
+        date = JSONParser().parse(request)
+        serializer = UsuarioSerializer(usuario, data=data)
+        if serializer.os_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors, status=status)
+    elif request.method == 'DELETE':
+        usuario.delete()
+        return Response(status=status.HTTP_204_NOT_CONTENT)
